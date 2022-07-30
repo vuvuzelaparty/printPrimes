@@ -13,8 +13,7 @@ int main(void) {
 	}
 	for (int i, isPrime, bound; lower <= upper; lower++) {
 		isPrime = 1;
-		// don't need to test values greater than square root
-		bound = sqrt(lower);
+		bound = sqrt(lower); // don't need to test values greater than square root
 		for(i = 2; i <= bound && isPrime; i++)
 			isPrime = lower % i != 0;
 		if(isPrime && !(lower == 0 || lower == 1))

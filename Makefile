@@ -1,12 +1,19 @@
 EXE = printPrimes
-SRC = printPrimes.c
-CC = gcc
-RM = rm -f
+src = printPrimes.c
+cc = gcc
 
 .PHONY : clean
 
 all :
-	$(CC) $(SRC) -o $(EXE) -lm
+	$(cc) $(src) -o $(EXE) -lm
+	chmod +x $(EXE).bash
+
+bash : printPrimes.bash
+	chmod +x $(EXE).bash
+
+c : printPrimes.c
+	$(cc) $(src) -o $(EXE) -lm
 
 clean :
-	$(RM) $(EXE)
+	@rm -f $(EXE)
+	@chmod -x $(EXE).bash
